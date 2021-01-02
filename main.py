@@ -5,7 +5,7 @@ import re
 from random import randint
 import discord
 
-DISCORD_TOKEN = os.environ.get('DISCORD_TOKEN')
+DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 COMMAND_PREFIX = '/vtm5e'
 RE_MATCH = rf'^\{COMMAND_PREFIX}\s(\d+)\s(\d+)\s(\d+)$'
 DICE_FAILURE = 1
@@ -95,7 +95,4 @@ async def on_message(message):
         response = process_command(message.content)
         await message.channel.send(response)
 
-if DISCORD_TOKEN:
-    client.run(DISCORD_TOKEN)
-else:
-    print('DISCORD_TOKEN not found in env')
+client.run(DISCORD_TOKEN)
