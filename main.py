@@ -8,13 +8,11 @@ import discord
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 COMMAND_PREFIX = '/r'
 RE_MATCH = rf'^\{COMMAND_PREFIX}\s(\d+)\s(\d+)\s(\d+)$'
+USAGE = f"""Usage: `{COMMAND_PREFIX} <dice_pool> <hunger_pool> <difficulty>`
+Example: `{COMMAND_PREFIX} 5 2 3`"""
 FAILURE = 1
 SUCCESS = 6
 CRITICAL = 10
-
-
-def usage():
-    return """Usage: `/vtm5e <integer_dice_pool> <integer_hunger_pool> <integer_difficulty>`\nExample: `/vtm5e 5 2 3`"""
 
 
 def validate_command(command):
@@ -156,7 +154,7 @@ async def on_message(message):
         return
     elif not validate_command(message.content):
         await message.reply(
-            usage(),
+            USAGE,
             mention_author=True
         )
     else:
