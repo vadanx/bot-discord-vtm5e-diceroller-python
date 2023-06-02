@@ -1,4 +1,4 @@
-# bot-discord-vtm5e-diceroller-python
+# discord-vtm5dicebot-python
 
 Usage to run bot:
 ```bash
