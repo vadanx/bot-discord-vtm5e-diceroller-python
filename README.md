@@ -1,4 +1,8 @@
-# discord-vtm5e-dicebot
+# Discord VtM5E Dicebot
+
+Discord VtM5E Dicebot is a bot for Vampire: The Masquerade (5th edition) dice rolling.
+
+----
 
 Usage to run bot:
 ```bash
